@@ -1,8 +1,8 @@
 node {
-    def getGitBranchName() {
-        return scm.branches[0].name
-    }
     stage('checkout'){
-    echo "${getGitBranchName}"
+    echo "${getGitBranchName()}"
     }
+}
+def getGitBranchName() {
+    return scm.branches[0].name
 }
